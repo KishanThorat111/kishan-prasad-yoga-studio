@@ -1,0 +1,69 @@
+/* App specific styles */
+
+/* Smooth scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+/* Horizontal scroll track for classes */
+.horizontal-scroll-track {
+  will-change: transform;
+}
+
+/* Performance optimizations */
+.section-pinned {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* GPU acceleration */
+[class*="card"],
+[class*="track"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Focus styles */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #FF9933;
+  outline-offset: 2px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .section-pinned {
+    min-height: 100vh;
+    height: auto;
+  }
+  
+  .horizontal-scroll-track {
+    flex-direction: column;
+    padding: 5vh 5vw;
+    gap: 3rem;
+    transform: none !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
